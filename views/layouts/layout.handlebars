@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>LoginApp</title>
+	<link rel = 'stylesheet' href = '/css/bootstrap.css' />
+	<link rel = 'stylesheet' href = '/css/style.css' />
+<head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<h3 class="text-info">LoginApp</h3>
+
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+				{{#if user}}
+					<li>
+						<a class="nav-link" href="/">Dashboard</a>
+					</li>
+					<li>
+						<a class="nav-link" href="/users/logout">Logout</a>
+					</li>
+				{{else}}
+					<li>
+						<a class="nav-link" href="/users/login">Login</a>
+					</li>
+					<li>
+						<a class="nav-link" href="/users/register">Register</a>
+					</li>
+				{{/if}}
+			</ul>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+        <div class="container">
+        	<h1 class="display-5">Work Better, Safer, Together!</h1>
+        	<i>The best view comes after the hardest climb...</i>
+    	</div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+        	<div class="col-md-10">
+        		{{#if success_msg}}
+        			<div class = 'alert alert-success' > {{success_msg}} </div>
+        		{{/if}}
+
+        		{{#if error_msg}}
+        			<div class = 'alert alert-danger' > {{error_msg}} </div>
+        		{{/if}}
+
+        		{{#if error}}
+        			<div class = 'alert alert-danger' > {{error}} </div>
+        		{{/if}}
+
+        		{{{body}}}
+          	</div>
+        </div>
+
+        <hr>
+
+    </div>
+
+    <footer class="container">
+    	<p>&copy; LoginApp 2018, Inc.</p>
+    </footer>
+
+</body>
+
+</html>
